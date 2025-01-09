@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import Contact from "../Contact/Contact";
 import s from "./ContactList.module.css";
-const ContactList = ({ contacts }) => {
+
+const ContactList = ({ contacts, onDeleteContact }) => {
   return (
     <>
       <ul className={s.wrapper}>
-        <Contact contacts={contacts} />
+        <Contact contacts={contacts} onDeleteContact={onDeleteContact} />
       </ul>
     </>
   );
@@ -18,5 +19,6 @@ ContactList.propTypes = {
       number: PropTypes.string.isRequired,
     })
   ).isRequired,
+  onDeleteContact: PropTypes.func.isRequired,
 };
 export default ContactList;
