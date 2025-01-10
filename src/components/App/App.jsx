@@ -8,11 +8,10 @@ import { nanoid } from "nanoid";
 const App = () => {
   const [listContacts, setListContacts] = useState(() => {
     const savedContacts = JSON.parse(localStorage.getItem("listContacts"));
-    if (savedContacts.length) {
+    if (savedContacts && savedContacts.length) {
       return savedContacts;
-    } else {
-      [];
     }
+    return [];
   });
 
   const [searchName, setSearchName] = useState("");
