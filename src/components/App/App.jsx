@@ -10,8 +10,9 @@ const App = () => {
     const savedContacts = JSON.parse(localStorage.getItem("listContacts"));
     if (savedContacts.length) {
       return savedContacts;
+    } else {
+      [];
     }
-    [];
   });
 
   const [searchName, setSearchName] = useState("");
