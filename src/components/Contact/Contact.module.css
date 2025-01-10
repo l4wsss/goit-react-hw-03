@@ -4,8 +4,21 @@
   justify-content: space-between;
   padding: 10px;
   border: 1px solid black;
+  align-items: center;
 }
+
 .containerInfo {
   display: flex;
   flex-direction: column;
+}
+
+.button {
+  border: 1px solid black;
+  padding: 5px;
+  background-color: gainsboro;
+  height: 34px;
+}
+
+.icon {
+  margin-right: 5px;
 }

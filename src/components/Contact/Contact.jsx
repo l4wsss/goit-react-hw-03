@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import s from "./Contact.module.css";
+import { FaUser, FaPhone } from "react-icons/fa";
 
 const Contact = ({ contacts, onDeleteContact }) => {
   return (
@@ -7,10 +8,19 @@ const Contact = ({ contacts, onDeleteContact }) => {
       {contacts.map((contact) => (
         <li key={contact.id} className={s.container}>
           <div className={s.containerInfo}>
-            <span>{contact.name}</span>
-            <span>{contact.number}</span>
+            <span>
+              <FaUser className={s.icon} /> {contact.name}
+            </span>
+            <span>
+              <FaPhone className={s.icon} />
+              {contact.number}
+            </span>
           </div>
-          <button type="button" onClick={() => onDeleteContact(contact.id)}>
+          <button
+            className={s.button}
+            type="button"
+            onClick={() => onDeleteContact(contact.id)}
+          >
             Delete
           </button>
         </li>

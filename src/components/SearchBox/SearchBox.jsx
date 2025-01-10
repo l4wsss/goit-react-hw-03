@@ -1,11 +1,17 @@
 import PropTypes from "prop-types";
+import s from "./SearchBox.module.css";
 
 const SearchBox = ({ value, onChange }) => {
   return (
     <>
-      <label>
+      <label className={s.container}>
         <span>Find contacts by name</span>
-        <input type="text" value={value} onChange={onChange} />
+        <input
+          className={s.input}
+          type="text"
+          value={value}
+          onChange={onChange}
+        />
       </label>
     </>
   );
