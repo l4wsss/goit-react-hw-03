@@ -6,7 +6,11 @@ const ContactList = ({ contacts, onDeleteContact }) => {
   return (
     <>
       <ul className={s.wrapper}>
-        <Contact contacts={contacts} onDeleteContact={onDeleteContact} />
+        {contacts.map((contact) => (
+          <li key={contact.id} className={s.li}>
+            <Contact contact={contact} onDeleteContact={onDeleteContact} />
+          </li>
+        ))}
       </ul>
     </>
   );
